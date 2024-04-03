@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="FS3D-Portrait: Few-shot 3D Talking Portrait Synthesis">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FS3D-Portrait: Few-shot 3D Talking Portrait Synthesis</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/logo.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+<style> .table-warped {overflow:scroll;}</style>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column has-text-centered">
+        <h2 class="title is-1 publication-title">
+          FS3D-Portrait: Few-shot 3D Talking Portrait Synthesis</h2>
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">
+            Anonymous Authors</span>
+        </div>
+        <div class="column has-text-centered">
+          <div class="publication-links">
+            <!-- Code Link. -->
+            <span class="link-block">
+              <a href="" class="external-link button is-normal is-rounded is-dark" onclick="alert('We plan to release the source code after the rebuttal phase.')">
+              <span class="icon">
+              <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
+              </span>
+              <span>Code</span>
+              </a>
+              </span>
+          </div>
+        </div>
+      </div>  
+    </div>
+    
+
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Few-shot talking face generation (TFG) is a variant of one-shot TFG, which takes multiple images instead of one image as the identity reference to generate vivid talking portrait videos. Taking several source images could complement the occluded information in one source image (such as closed eyes or mouth) and alleviate the performance drop caused by large head pose manipulation. However, previous warp-based methods struggle to align the multiple images of different expressions and head poses, leading to visible artifacts under the few-shot setting. Besides, the time complexity grows as the number of source images increases, and it is non-trivial to exploit the multi-frame information into a mixed representation. In this paper, we propose FS3D-Portrait, a few-shot 3D talking portrait synthesizer that handles the aforementioned three challenges. Specifically, we first design a one-shot base renderer, which involves an image-to-grid model that converts the source image into a 3D face representation, inherently aligning the multiple source images in a canonical space. Secondly, we introduce a coarse filtering strategy that could automatically select valuable samples from the source image set. Thirdly, we propose a cross-attention-based multi-grid mixer to aggregate valuable local information from different source images. Extensive experiments show that FS3D-Portrait generates more realistic talking portrait videos compared to previous one-shot or few-shot methods.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Overall Framework -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overall Framework</h2>
+        <div class="content has-text-justified">
+          <p>
+            The overall inference process of FS3D-Portrait is demonstrated as follows:
+          </p>
+          <p>
+            <img src="./static/images/inference.png"
+      class="interpolation-image"
+      alt="The inference process of FS3D-Portrait."/>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Overall Framework -->
+  </div>
+<!-- </section> -->
+  <div> </div>
+
+
+
+<!-- <section class="section"> -->
+  <div class="container is-max-desktop">
+
+    <div class="columns ">
+      <div class="column ">
+        <div class="content ">
+          <h3 class="title is-3">1. Few-shot talking face generation with the <b><u>CTFG model</u></b></h3>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <video controls preload width="70%">
+        <source src="static/videos/demo_ctfg.mp4" type="video/mp4" > 
+      </video>
+    </div>
+
+    <div class="columns ">
+      <div class="column ">
+        <div class="content ">
+          <h2 class="title is-3 has-text-centered ">2. Comparison with Baselines</h2>
+          <h3 class="title is-4 has-text-centered ">2.1 One/Few-shot Video-Driven Methods</h3>
+          <div><b>Tested Baselines: </b> </div>
+          <div>
+            <b>One-shot: Face-vid2vid (CVPR 2021), TPS (CVPR 2022), DPE (CVPR 2023), HiDe-NeRF (CVPR 2023);</b>
+          </div>
+          <b>Few-shot: FewShot-vid2vid (NeurIPS 2019), GPAvatar (ICLR 2024).</b>
+          <p></p>
+          From the following demo video, we can see that our FS3D-Portrait has the following advantages over previous video-driven baselines: (1) It can maintain realistic 3D geometry under larger motion, whereas previous baselines like Face-vid2vid may produce distortion or warping artifacts; (2) It can generate more realistic regions that are occluded in the source image, such as eyes, teeth, and side faces; (3) It has better overall image quality.
+          <p></p>
+
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <video controls preload width="70%">
+        <source src="static/videos/comparison_with_video_driven.mp4" type="video/mp4" > 
+      </video>
+    </div>
+
+    <div class="columns ">
+      <div class="column ">
+        <div class="content ">
+          <h3 class="title is-4 has-text-centered">2.2 One-Shot Audio-Driven Methods</h3>
+
+          <div><b>Tested Baselines: </b> </div>
+          <div><b>MakeItTalk (SIGGRAPH Asia 2020), PC-AVS (CVPR 2021), SadTalker (CVPR 2023) </b></div>
+
+          <p></p>
+            For fairness, we feed only one source image into our few-shot CTFG model and compare with other SOTA audio-driven methods. Our method achieves more accurate lip-sync, better visual quality, and better identity similarity at various head poses.
+          <p></p>
+
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <video controls preload width="70%">
+        <source src="static/videos/comparison_with_oneshot_audio_driven.mp4" type="video/mp4"> 
+      </video>
+    </div>
+
+
+
+
+    <div class="columns is-centered">
+      <h2 class="title is-3 is-centered">3. Attention Visualization in the Multi-Grid Mixer</h2>
+    </div>
+
+
+
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-centered">
+        <div class="content has-text-centered is-centered">
+          <h3 class="title is-6">Interpretability: How the multi-grid mixer in the CTFG model works in the few-shot setting</h3>
+          <video controls preload width="75%">
+            <source src="static/videos/demo_ctfg_attention.mp4" type="video/mp4"> 
+          </video>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+</section>
+
+
+
+</body>
+</html>
